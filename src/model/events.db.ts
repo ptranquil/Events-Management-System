@@ -33,12 +33,11 @@ const eventSchema = new Schema<Event>({
         state: { type: String, required: true },
         zip: { type: String, required: true },
     },
-    isActive: { type: Boolean, required: true },
+    isActive: { type: Boolean, required: true, default: true },
 }, {
     versionKey: false,
     timestamps: true,
     collection: "events"
-
 });
 
 export const EventModel = mongoose.model<Event>('Events', eventSchema);

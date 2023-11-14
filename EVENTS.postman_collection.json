@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "1c5f88fd-4fae-4286-8e1f-448d5936f4b3",
+		"name": "EVENTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25280603",
+		"_collection_link": "https://registeration-form.postman.co/workspace/ONDC-TS-v2.0~bb44ec8b-0cb3-4ea5-96f1-f36a63c20511/collection/25280603-1c5f88fd-4fae-4286-8e1f-448d5936f4b3?action=share&source=collection_link&creator=30935161"
+	},
+	"item": [
+		{
+			"name": "Create Events",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"121212\",\r\n    \"eventName\": \"Sample Event\",\r\n    \"eventDate\": \"{{$isoTimestamp}}\",\r\n    \"organizer\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"phone\": \"1111111111\",\r\n    \"location\": {\r\n        \"street\": \"123 Test Street, Andheri\",\r\n        \"city\": \"Mumbai\",\r\n        \"state\": \"ST\",\r\n        \"zip\": \"400059\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Multiple Events",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"event00001\",\r\n        \"eventName\": \"Sample Events1\",\r\n        \"eventDate\": \"{{$isoTimestamp}}\",\r\n        \"organizer\": \"Test \",\r\n        \"email\": \"test@example.com\",\r\n        \"phone\": \"1111111111\",\r\n        \"location\": {\r\n            \"street\": \"123 Test Street, Andheri\",\r\n            \"city\": \"Mumbai\",\r\n            \"state\": \"ST\",\r\n            \"zip\": \"400059\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": \"event00002\",\r\n        \"eventName\": \"Sample Events2\",\r\n        \"eventDate\": \"{{$isoTimestamp}}\",\r\n        \"organizer\": \"Test2 Doe\",\r\n        \"email\": \"johnetest@example.com\",\r\n        \"phone\": \"9999999999\",\r\n        \"location\": {\r\n            \"street\": \"123 Test Street, Andheri\",\r\n            \"city\": \"Mumbai\",\r\n            \"state\": \"ST\",\r\n            \"zip\": \"400059\"\r\n        }\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/addmultipleevents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addmultipleevents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Events",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eventName\": \"Sample Event1\",\r\n    \"eventDate\": \"2023-11-07\",\r\n    \"organizer\": \"John Doeeeee\",\r\n    \"email\": \"john.doe@example.commm\",\r\n    \"phone\": \"5555555555\",\r\n    \"location\": {\r\n        \"street\": \"123 Test Street, AndheriEast\",\r\n        \"city\": \"Pune\",\r\n        \"state\": \"maharashtra\",\r\n        \"zip\": \"121212\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events/111121232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"111121232"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Events By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/events/333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"333"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Events",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/events/333",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events",
+						"333"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Events Based on filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"events"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2023-06-11",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

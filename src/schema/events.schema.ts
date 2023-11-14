@@ -1,4 +1,4 @@
-import { object, string, date } from 'zod';
+import { object, string, date, array, ZodArray } from 'zod';
 
 const locationSchema = object({
     street: string(),
@@ -15,4 +15,6 @@ export const eventSchema = object({
     email: string().email(),
     phone: string().min(10), // Adjust the min length as needed
     location: locationSchema,
-});
+})
+
+export const multipleEventSchema: ZodArray<typeof eventSchema> = array(eventSchema).min(1)
